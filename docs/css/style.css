@@ -1,0 +1,98 @@
+/* IDEA: le damos estilo a los bontones */
+
+button {
+  border: 10px solid #000;
+  cursor: pointer;
+  height: 300px;
+  margin: 0 -2px;
+  outline: none;
+  padding: 0;
+  width: 300px;
+}
+
+/* IDEA: cuando el juego te muestra la secuencia, si estás sobre un botón, no puedes distinguir si está activo o no. Esto es para la propiedad: hover que hemos definido en el CSS.
+
+Para evitar ese comportamiento, agregaremos una clase bloqueada al contenedor de los elementos mientras mostramos la secuencia.
+ */
+
+#buttons-container.blocked button {
+  pointer-events: none;
+}
+
+
+/* IDEA: le damos color a cada boton y le ponemos un porder
+radius a cada uno en una esquina predeterminada para darle
+el efecto redondeado */
+
+#green {
+  border-top-left-radius: 100%;
+  background: rgba(35, 200, 82, 0.4);
+}
+
+#red {
+  border-top-right-radius: 100%;
+  background: rgba(254, 35, 34, 0.4);
+}
+
+#yellow {
+  border-bottom-left-radius: 100%;
+  background: rgba(243, 194, 16, 0.4);
+}
+
+#blue {
+  border-bottom-right-radius: 100%;
+  background: rgba(0, 103, 208, 0.4);
+}
+
+/* IDEA:  agregar un ancho fijo al contenedor, y los botones
+ se arrendarán automáticamente */
+
+ section {
+  margin: 0 auto;
+  position: relative;
+  width: 620px;
+}
+
+/* IDEA: Vamos a crear un efecto de desplazamiento que establecerá
+ el color de fondo con una opacidad del 100% */
+
+#red.active,
+#red:hover {
+  background: rgba(254, 35, 34, 1);
+}
+
+#green.active,
+#green:hover {
+  background: rgba(35, 200, 82, 1);
+}
+
+#yellow.active,
+#yellow:hover {
+  background: rgba(243, 194, 16, 1);
+}
+
+#blue.active,
+#blue:hover {
+  background: rgba(0, 103, 208, 1);
+}
+
+/* IDEA: haremos un estilo del contador y lo colocaremos en el medio
+ de los botones. */
+
+ #counter {
+   background: #000;
+   border-radius: 50%;
+   box-sizing: border-box;
+   color: #fff;
+   font-family: Arial;
+   font-size: 100px;
+   line-height: 200px;
+   height: 200px;
+   margin-top: -100px;
+   margin-left: -108px;
+   position: absolute;
+   left: 50%;
+   text-align: center;
+   top: 50%;
+   width: 200px;
+ }
